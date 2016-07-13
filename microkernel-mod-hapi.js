@@ -167,7 +167,7 @@ export default class Module {
                     `HTTP/${request.raw.req.httpVersion}`
                 let msg =
                     "request: " +
-                    "remote="   + `${request.info.remoteAddress}:${request.info.remotePort}` + ", " +
+                    "remote="   + `${request.app.clientAddress}:${request.info.remotePort}` + ", " +
                     "method="   + request.method.toUpperCase() + ", " +
                     "url="      + request.url.path + ", " +
                     "protocol=" + protocol + ", " +

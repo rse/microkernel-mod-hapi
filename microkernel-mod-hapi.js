@@ -150,7 +150,9 @@ export default class Module {
                     cookieKey:     "token",
                     tokenType:     "JWT",
                     validateFunc: (decoded, request, callback) => {
-                        callback(null, true, decoded)
+                        let result = kernel.hook("hapi:jwt-validate", "pass",
+                            { error: null, result: true }, decoded, request)
+                        callback(result.error, result.result, decoded)
                     }
                 })
             })

@@ -28,7 +28,7 @@ import http          from "http"
 /*  external requirements (non-standard)  */
 import fs            from "fs-promise"
 import co            from "co"
-import Bluebird      from "bluebird"
+import Promise       from "bluebird"
 import HAPI          from "hapi"
 import Auth          from "hapi-auth-basic"
 import HAPIDucky     from "hapi-plugin-ducky"
@@ -113,7 +113,7 @@ export default class Module {
             server.connection(hapiOpts)
 
             /*  register HAPI plugins  */
-            let register = Bluebird.promisify(server.register, { context: server })
+            let register = Promise.promisify(server.register, { context: server })
             yield (register({ register: Inert }))
             yield (register({ register: Auth }))
             yield (register({ register: HAPIBoom }))

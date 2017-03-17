@@ -29,7 +29,7 @@
         "hapi-plugin-ducky":          "~0.9.5",
         "hapi-plugin-header":         "~0.9.3",
         "hapi-plugin-traffic":        "~0.9.4",
-        "hapi-plugin-websocket":      "~0.9.5",
+        "hapi-plugin-websocket":      "~0.9.6",
         "http2":                      "~3.3.6",
         "inert":                      "~4.1.0",
         "jsonwebtoken":               "~7.3.0"
@@ -39,7 +39,7 @@
         "babel":                      "~6.23.0",
         "babel-preset-es2015":        "~6.24.0",
         "babel-eslint":               "~7.1.1",
-        "eslint":                     "~3.17.1"
+        "eslint":                     "~3.18.0"
     },
     "peerDependencies": {
         "microkernel":                "*",

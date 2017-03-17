@@ -131,7 +131,7 @@ export default class Module {
                 let clientAddress = "<unknown>"
                 if (request.headers["x-forwarded-for"])
                     clientAddress = request.headers["x-forwarded-for"]
-                        .replace(/^(?:\S+,\s*)*(\S+)$/, "$1")
+                        .replace(/^(\S+)(?:,\s*\S+)*$/, "$1")
                 else
                     clientAddress = request.info.remoteAddress
                 request.app.clientAddress = clientAddress

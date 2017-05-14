@@ -18,7 +18,7 @@
     "homepage": "https://github.com/rse/microkernel-mod-hapi",
     "bugs":     "https://github.com/rse/microkernel-mod-hapi/issues",
     "dependencies": {
-        "fs-promise":                 "~2.0.2",
+        "mz":                         "~2.6.0",
         "co":                         "~4.6.0",
         "bluebird":                   "~3.5.0",
         "hapi":                       "~16.1.1",

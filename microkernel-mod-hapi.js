@@ -26,7 +26,7 @@
 import http          from "http"
 
 /*  external requirements (non-standard)  */
-import fs            from "fs-promise"
+import fs            from "mz/fs"
 import co            from "co"
 import Promise       from "bluebird"
 import HAPI          from "hapi"

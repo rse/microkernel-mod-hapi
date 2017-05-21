@@ -165,7 +165,7 @@ export default class Module {
                 let traffic = kernel.rs("options:options").accounting ? request.traffic() : null
                 let ws = request.websocket()
                 let protocol =
-                    (ws && ws.ws ? `WebSocket/${ws.ws.protocolVersion}+` : "") +
+                    (ws.used ? `WebSocket/${ws.ws.protocolVersion}+` : "") +
                     `HTTP/${request.raw.req.httpVersion}`
                 let msg =
                     "request: " +

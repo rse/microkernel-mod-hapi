@@ -119,7 +119,7 @@ export default class Module {
             yield (register({ register: HAPIBoom }))
             yield (register({ register: HAPIDucky }))
             let id = kernel.rs("ctx:info").app.replace(/\s+/g, "/")
-            yield (register({ register: HAPIHeader, options: { Server: id }}))
+            yield (register({ register: HAPIHeader, options: { Server: id } }))
             if (this.options.websockets)
                 yield (register({ register: HAPIWebSocket }))
             yield (register({ register: HAPICo }))

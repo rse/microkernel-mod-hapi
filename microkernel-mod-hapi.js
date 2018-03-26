@@ -27,7 +27,6 @@ const http          = require("http")
 
 /*  external requirements (non-standard)  */
 const fs            = require("mz/fs")
-const co            = require("co")
 const HAPI          = require("hapi")
 const Auth          = require("hapi-auth-basic")
 const HAPIDucky     = require("hapi-plugin-ducky")

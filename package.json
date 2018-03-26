@@ -19,8 +19,6 @@
     "bugs":     "https://github.com/rse/microkernel-mod-hapi/issues",
     "dependencies": {
         "mz":                         "2.7.0",
-        "co":                         "4.6.0",
-        "bluebird":                   "3.5.1",
         "hapi":                       "17.2.3",
         "hapi-auth-basic":            "5.0.0",
         "hapi-auth-jwt2":             "8.0.1",

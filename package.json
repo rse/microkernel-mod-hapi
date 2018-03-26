@@ -18,40 +18,44 @@
     "homepage": "https://github.com/rse/microkernel-mod-hapi",
     "bugs":     "https://github.com/rse/microkernel-mod-hapi/issues",
     "dependencies": {
-        "mz":                         "2.6.0",
+        "mz":                         "2.7.0",
         "co":                         "4.6.0",
-        "bluebird":                   "3.5.0",
-        "hapi":                       "16.5.2",
-        "hapi-auth-basic":            "4.2.0",
-        "hapi-auth-jwt2":             "7.3.0",
-        "hapi-boom-decorators":       "3.0.0",
-        "hapi-plugin-co":             "0.9.10",
-        "hapi-plugin-ducky":          "0.9.12",
-        "hapi-plugin-header":         "0.9.3",
-        "hapi-plugin-traffic":        "0.9.4",
-        "hapi-plugin-websocket":      "1.2.16",
-        "http2":                      "3.3.6",
-        "inert":                      "4.2.1",
-        "jsonwebtoken":               "7.4.2"
+        "bluebird":                   "3.5.1",
+        "hapi":                       "17.2.3",
+        "hapi-auth-basic":            "5.0.0",
+        "hapi-auth-jwt2":             "8.0.1",
+        "hapi-boom-decorators":       "4.0.0",
+        "hapi-plugin-co":             "1.0.3",
+        "hapi-plugin-ducky":          "1.0.3",
+        "hapi-plugin-header":         "1.0.2",
+        "hapi-plugin-traffic":        "1.0.0",
+        "hapi-plugin-websocket":      "2.0.2",
+        "http2":                      "3.3.7",
+        "inert":                      "5.1.0",
+        "jsonwebtoken":               "8.2.0"
     },
     "devDependencies": {
-        "babel-cli":                  "6.24.1",
+        "babel-cli":                  "6.26.0",
         "babel-preset-es2015":        "6.24.1",
-        "babel-eslint":               "7.2.3",
-        "eslint":                     "4.3.0",
-        "eslint-config-standard":     "10.2.1",
+        "babel-eslint":               "8.2.2",
+        "eslint":                     "4.19.1",
+        "eslint-config-standard":     "11.0.0",
         "eslint-plugin-standard":     "3.0.1",
-        "eslint-plugin-promise":      "3.5.0",
-        "eslint-plugin-import":       "2.7.0",
-        "eslint-plugin-node":         "5.1.1"
+        "eslint-plugin-promise":      "3.7.0",
+        "eslint-plugin-import":       "2.9.0",
+        "eslint-plugin-node":         "6.0.1"
     },
     "peerDependencies": {
         "microkernel":                "*",
         "microkernel-mod-ctx":        "*",
         "microkernel-mod-logger":     "*"
     },
-    "scripts": {
-        "prepublish": "eslint --config eslint.yaml microkernel-mod-hapi.js && babel --presets es2015 microkernel-mod-hapi.js >microkernel-mod-hapi.js5"
+    "engines": {
+        "node":                       ">=8.0.0"
     },
-    "main": "microkernel-mod-hapi.js5"
+    "scripts": {
+        "prepublish": "eslint --config eslint.yaml microkernel-mod-hapi.js",
+        "tesdt":      "node test.js"
+    },
+    "main": "microkernel-mod-hapi.js"
 }

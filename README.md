@@ -23,25 +23,30 @@ Usage
 
 ```shell
 $ npm install microkernel
-$ npm install microkernel-mod-ctx microkernel-mod-logger
+$ npm install microkernel-mod-ctx microkernel-mod-logger microkernel-mod-options
 $ npm install microkernel-mod-hapi
 ```
 
 ```js
-var Microkernel = require("microkernel")
-var kernel = new Microkernel()
+const path = require("path")
+const Microkernel = require("microkernel")
 
-kernel.load("microkernel-mod-hapi")
+const kernel = new Microkernel()
+
+kernel.load("microkernel-mod-ctx")
+kernel.load("microkernel-mod-options")
+kernel.load("microkernel-mod-logger")
+kernel.load([ path.join(__dirname, "microkernel-mod-hapi.js"), { websockets: true } ])
 
 kernel.add(class ExampleModule {
     get module () {
         return {
             name:  "example",
-            after: [ "CTX", "OPTIONS", "HAPI" ]
+            after: [ "HAPI" ]
         }
     }
     latch (mk) {
-        let uidir = path.join(mk.rs("ctx:basedir"), "..", "ui")
+        let uidir = path.join(mk.rs("ctx:basedir"), ".")
         mk.latch("options:options", (options) => {
             options.push({
                 names: [ "ui" ], type: "string", "default": uidir,
@@ -53,8 +58,8 @@ kernel.add(class ExampleModule {
         mk.rs("hapi").route({
             method: "GET",
             path: "/",
-            handler: (request, reply) => {
-                reply.redirect("ui/")
+            handler: (request, h) => {
+                return h.redirect("ui/")
             }
         })
 
@@ -71,6 +76,12 @@ kernel.add(class ExampleModule {
             }
         })
     }
+})
+
+kernel.state("started").then(() => {
+    kernel.publish("app:start:success")
+}).catch((err) => {
+    kernel.publish("app:start:error", err)
 })
 ```
 

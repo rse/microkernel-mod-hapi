@@ -1,6 +1,6 @@
 {
     "name":        "microkernel-mod-hapi",
-    "version":     "1.1.3",
+    "version":     "1.1.4",
     "description": "Microkernel module for integrating HAPI",
     "keywords": [
         "microkernel", "module", "hapi"

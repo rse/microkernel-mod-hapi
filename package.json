@@ -23,7 +23,7 @@
         "hapi-auth-basic":            "5.0.0",
         "hapi-auth-jwt2":             "8.1.0",
         "hapi-boom-decorators":       "4.1.1",
-        "hapi-plugin-co":             "1.0.11",
+        "hapi-plugin-co":             "1.0.12",
         "hapi-plugin-ducky":          "1.0.11",
         "hapi-plugin-header":         "1.0.9",
         "hapi-plugin-traffic":        "1.0.7",

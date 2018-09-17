@@ -19,7 +19,7 @@
     "bugs":     "https://github.com/rse/microkernel-mod-hapi/issues",
     "dependencies": {
         "mz":                         "2.7.0",
-        "hapi":                       "17.5.3",
+        "hapi":                       "17.5.4",
         "hapi-auth-basic":            "5.0.0",
         "hapi-auth-jwt2":             "8.1.0",
         "hapi-boom-decorators":       "4.1.1",
@@ -27,18 +27,18 @@
         "hapi-plugin-ducky":          "1.0.11",
         "hapi-plugin-header":         "1.0.9",
         "hapi-plugin-traffic":        "1.0.7",
-        "hapi-plugin-websocket":      "2.0.12",
+        "hapi-plugin-websocket":      "2.0.13",
         "http2":                      "3.3.7",
         "inert":                      "5.1.0",
         "jsonwebtoken":               "8.3.0"
     },
     "devDependencies": {
-        "babel-eslint":               "8.2.6",
-        "eslint":                     "5.3.0",
-        "eslint-config-standard":     "11.0.0",
-        "eslint-plugin-standard":     "3.1.0",
-        "eslint-plugin-promise":      "3.8.0",
-        "eslint-plugin-import":       "2.13.0",
+        "babel-eslint":               "9.0.0",
+        "eslint":                     "5.6.0",
+        "eslint-config-standard":     "12.0.0",
+        "eslint-plugin-standard":     "4.0.0",
+        "eslint-plugin-promise":      "4.0.1",
+        "eslint-plugin-import":       "2.14.0",
         "eslint-plugin-node":         "7.0.1"
     },
     "peerDependencies": {

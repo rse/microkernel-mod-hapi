@@ -167,7 +167,7 @@ class Module {
                 "method="   + request.method.toUpperCase() + ", " +
                 "url="      + request.url.path + ", " +
                 "protocol=" + protocol + ", " +
-                "response=" + request.response.statusCode +
+                "response=" + (request.response ? request.response.statusCode : "<unknown>") +
                 (kernel.rs("options:options").accounting ?  ", " +
                     "recv="     + traffic.recvPayload + "/" + traffic.recvRaw + ", " +
                     "sent="     + traffic.sentPayload + "/" + traffic.sentRaw + ", " +

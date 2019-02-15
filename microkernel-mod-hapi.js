@@ -143,7 +143,7 @@ class Module {
             cookieKey:     "token",
             tokenType:     "JWT",
             validate: (decoded, request, h) => {
-                let result = this.hook("hapi:jwt-validate", "pass",
+                let result = kernel.hook("hapi:jwt-validate", "pass",
                     { error: null, result: true }, decoded, request)
                 return { isValid: result.result, error: result.error }
             }

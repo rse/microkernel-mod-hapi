@@ -27,17 +27,16 @@ const http          = require("http")
 
 /*  external requirements (non-standard)  */
 const fs            = require("mz/fs")
-const HAPI          = require("hapi")
-const Auth          = require("hapi-auth-basic")
+const HAPI          = require("@hapi/hapi")
+const Auth          = require("@hapi/basic")
 const HAPIDucky     = require("hapi-plugin-ducky")
 const HAPITraffic   = require("hapi-plugin-traffic")
 const HAPIHeader    = require("hapi-plugin-header")
 const HAPIWebSocket = require("hapi-plugin-websocket")
 const HAPICo        = require("hapi-plugin-co")
-const HAPIBoom      = require("hapi-boom-decorators")
 const HAPIAuthJWT2  = require("hapi-auth-jwt2")
 const JWT           = require("jsonwebtoken")
-const Inert         = require("inert")
+const Inert         = require("@hapi/inert")
 const Http2         = require("http2")
 
 class Module {
@@ -111,7 +110,6 @@ class Module {
         /*  register HAPI plugins  */
         await server.register({ plugin: Inert })
         await server.register({ plugin: Auth })
-        await server.register({ plugin: HAPIBoom })
         await server.register({ plugin: HAPIDucky })
         let id = kernel.rs("ctx:info").app.replace(/\s+/g, "/")
         await server.register({ plugin: HAPIHeader, options: { Server: id } })

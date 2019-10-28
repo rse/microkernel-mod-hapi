@@ -19,26 +19,26 @@
     "bugs":     "https://github.com/rse/microkernel-mod-hapi/issues",
     "dependencies": {
         "mz":                         "2.7.0",
-        "@hapi/hapi":                 "18.3.1",
-        "@hapi/basic":                "5.1.0",
-        "hapi-auth-jwt2":             "8.6.1",
+        "@hapi/hapi":                 "18.4.0",
+        "@hapi/basic":                "5.1.1",
+        "hapi-auth-jwt2":             "8.8.0",
         "hapi-plugin-co":             "1.1.0",
         "hapi-plugin-ducky":          "1.1.0",
         "hapi-plugin-header":         "1.1.0",
         "hapi-plugin-traffic":        "1.1.0",
-        "hapi-plugin-websocket":      "2.1.1",
+        "hapi-plugin-websocket":      "2.2.0",
         "http2":                      "3.3.7",
-        "@hapi/inert":                "5.2.0",
+        "@hapi/inert":                "5.2.2",
         "jsonwebtoken":               "8.5.1"
     },
     "devDependencies": {
-        "babel-eslint":               "10.0.1",
-        "eslint":                     "5.16.0",
-        "eslint-config-standard":     "12.0.0",
-        "eslint-plugin-standard":     "4.0.0",
-        "eslint-plugin-promise":      "4.1.1",
-        "eslint-plugin-import":       "2.17.3",
-        "eslint-plugin-node":         "9.1.0"
+        "babel-eslint":               "10.0.3",
+        "eslint":                     "6.6.0",
+        "eslint-config-standard":     "14.1.0",
+        "eslint-plugin-standard":     "4.0.1",
+        "eslint-plugin-promise":      "4.2.1",
+        "eslint-plugin-import":       "2.18.2",
+        "eslint-plugin-node":         "10.0.0"
     },
     "peerDependencies": {
         "microkernel":                "*",

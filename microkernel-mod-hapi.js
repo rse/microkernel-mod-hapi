@@ -85,8 +85,8 @@ class Module {
         /*  create underlying HTTP/HTTPS listener  */
         let listener
         if (kernel.rs("options:options").tls) {
-            let key = await fs.readFile(kernel.rs("options:options").tls_key,  "utf8")
-            let crt = await fs.readFile(kernel.rs("options:options").tls_cert, "utf8")
+            const key = await fs.readFile(kernel.rs("options:options").tls_key,  "utf8")
+            const crt = await fs.readFile(kernel.rs("options:options").tls_cert, "utf8")
             listener = Http2.createServer({ key: key, cert: crt })
         }
         else
@@ -95,7 +95,7 @@ class Module {
             listener.address = function () { return this._server.address() }
 
         /*  configure the listening socket  */
-        let hapiOpts = {
+        const hapiOpts = {
             listener: listener,
             address:  kernel.rs("options:options").host,
             port:     kernel.rs("options:options").port
@@ -104,14 +104,14 @@ class Module {
             hapiOpts.tls = true
 
         /*  establish a new server context  */
-        let server = new HAPI.Server(hapiOpts)
+        const server = new HAPI.Server(hapiOpts)
         kernel.rs("hapi", server)
 
         /*  register HAPI plugins  */
         await server.register({ plugin: Inert })
         await server.register({ plugin: Auth })
         await server.register({ plugin: HAPIDucky })
-        let id = kernel.rs("ctx:info").app.replace(/\s+/g, "/")
+        const id = kernel.rs("ctx:info").app.replace(/\s+/g, "/")
         await server.register({ plugin: HAPIHeader, options: { Server: id } })
         if (this.options.websockets)
             await server.register({ plugin: HAPIWebSocket })
@@ -132,7 +132,7 @@ class Module {
         })
 
         /*  prepare for JSONWebToken (JWT) authentication  */
-        let jwtKey = kernel.rs("options:options").jwt_secret
+        const jwtKey = kernel.rs("options:options").jwt_secret
         await server.register({ plugin: HAPIAuthJWT2 })
         server.auth.strategy("jwt", "jwt", {
             key:           jwtKey,
@@ -141,7 +141,7 @@ class Module {
             cookieKey:     "token",
             tokenType:     "JWT",
             validate: (decoded, request, h) => {
-                let result = kernel.hook("hapi:jwt-validate", "pass",
+                const result = kernel.hook("hapi:jwt-validate", "pass",
                     { error: null, result: true }, decoded, request)
                 return { isValid: result.result, error: result.error }
             }
@@ -152,14 +152,14 @@ class Module {
 
         /*  log all requests  */
         server.events.on("response", (request) => {
-            let traffic = kernel.rs("options:options").accounting ? request.traffic() : null
+            const traffic = kernel.rs("options:options").accounting ? request.traffic() : null
             let protocol = `HTTP/${request.raw.req.httpVersion}`
             if (this.options.websockets) {
-                let ws = request.websocket()
+                const ws = request.websocket()
                 if (ws.mode === "websocket")
                     protocol = `WebSocket/${ws.ws.protocolVersion}+`
             }
-            let msg =
+            const msg =
                 "request: " +
                 "remote="   + `${request.app.clientAddress}:${request.info.remotePort}` + ", " +
                 "method="   + request.method.toUpperCase() + ", " +
@@ -170,7 +170,7 @@ class Module {
                     "recv="     + traffic.recvPayload + "/" + traffic.recvRaw + ", " +
                     "sent="     + traffic.sentPayload + "/" + traffic.sentRaw + ", " +
                     "duration=" + traffic.timeDuration : "")
-            let info = { request, msg }
+            const info = { request, msg }
             kernel.hook("hapi:log", "none", info)
             kernel.sv("log", "hapi", "info", info.msg)
         })
@@ -195,7 +195,7 @@ class Module {
 
         /*  display network interaction information  */
         const displayListenHint = ([ scheme, proto ]) => {
-            let url = `${scheme}://${kernel.rs("options:options").host}:${kernel.rs("options:options").port}`
+            const url = `${scheme}://${kernel.rs("options:options").host}:${kernel.rs("options:options").port}`
             kernel.sv("log", "hapi", "info", `listen on ${url} (${proto})`)
         }
         displayListenHint(kernel.rs("options:options").tls ?

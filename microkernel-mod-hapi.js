@@ -56,25 +56,32 @@ class Module {
         kernel.latch("options:options", (options) => {
             options.push({
                 names: [ "host", "H" ], type: "string", "default": "127.0.0.1",
-                help: "IP address to listen", helpArg: "ADDRESS" })
+                help: "IP address to listen", helpArg: "ADDRESS"
+            })
             options.push({
                 names: [ "port", "P" ], type: "integer", "default": 8080,
-                help: "TCP port to listen", helpArg: "PORT" })
+                help: "TCP port to listen", helpArg: "PORT"
+            })
             options.push({
                 names: [ "tls" ], type: "bool", "default": false,
-                help: "speak TLS on host/port" })
+                help: "speak TLS on host/port"
+            })
             options.push({
                 names: [ "tls-key" ], type: "string", "default": null,
-                help: "use private key for TLS", helpArg: "FILE" })
+                help: "use private key for TLS", helpArg: "FILE"
+            })
             options.push({
                 names: [ "tls-cert" ], type: "string", "default": null,
-                help: "use X.509 certificate for TLS", helpArg: "FILE" })
+                help: "use X.509 certificate for TLS", helpArg: "FILE"
+            })
             options.push({
                 names: [ "accounting" ], type: "bool", "default": false,
-                help: "perform network traffic accounting" })
+                help: "perform network traffic accounting"
+            })
             options.push({
                 names: [ "jwt-secret" ], type: "string", "default": "",
-                help: "use secret for JSON Web Tokens (JWT)", helpArg: "SECRET" })
+                help: "use secret for JSON Web Tokens (JWT)", helpArg: "SECRET"
+            })
         })
     }
     async prepare (kernel) {

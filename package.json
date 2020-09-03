@@ -19,7 +19,7 @@
     "bugs":     "https://github.com/rse/microkernel-mod-hapi/issues",
     "dependencies": {
         "mz":                         "2.7.0",
-        "@hapi/hapi":                 "18.4.0",
+        "@hapi/hapi":                 "20.0.0",
         "@hapi/basic":                "5.1.1",
         "hapi-auth-jwt2":             "8.8.1",
         "hapi-plugin-co":             "1.1.2",

@@ -66,4 +66,5 @@ rules:
     object-curly-newline:                off
     array-bracket-spacing:               off
     quote-props:                         off
+    multiline-ternary:                   off
 

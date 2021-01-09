@@ -19,26 +19,24 @@
     "bugs":     "https://github.com/rse/microkernel-mod-hapi/issues",
     "dependencies": {
         "mz":                         "2.7.0",
-        "@hapi/hapi":                 "18.4.0",
-        "@hapi/basic":                "5.1.1",
-        "hapi-auth-jwt2":             "8.8.1",
-        "hapi-plugin-co":             "1.1.2",
-        "hapi-plugin-ducky":          "1.1.2",
-        "hapi-plugin-header":         "1.1.2",
-        "hapi-plugin-traffic":        "1.1.2",
-        "hapi-plugin-websocket":      "2.2.1",
-        "http2":                      "3.3.7",
-        "@hapi/inert":                "5.2.2",
+        "@hapi/hapi":                 "20.0.3",
+        "@hapi/basic":                "6.0.0",
+        "hapi-auth-jwt2":             "10.2.0",
+        "hapi-plugin-co":             "1.1.4",
+        "hapi-plugin-ducky":          "1.1.4",
+        "hapi-plugin-header":         "1.1.4",
+        "hapi-plugin-traffic":        "1.1.4",
+        "hapi-plugin-websocket":      "2.3.2",
+        "@hapi/inert":                "6.0.3",
         "jsonwebtoken":               "8.5.1"
     },
     "devDependencies": {
-        "babel-eslint":               "10.0.3",
-        "eslint":                     "6.8.0",
-        "eslint-config-standard":     "14.1.0",
-        "eslint-plugin-standard":     "4.0.1",
+        "babel-eslint":               "10.1.0",
+        "eslint":                     "7.17.0",
+        "eslint-config-standard":     "16.0.2",
         "eslint-plugin-promise":      "4.2.1",
-        "eslint-plugin-import":       "2.19.1",
-        "eslint-plugin-node":         "10.0.0"
+        "eslint-plugin-import":       "2.22.1",
+        "eslint-plugin-node":         "11.1.0"
     },
     "peerDependencies": {
         "microkernel":                "*",
@@ -46,7 +44,7 @@
         "microkernel-mod-logger":     "*"
     },
     "engines": {
-        "node":                       ">=8.0.0"
+        "node":                       ">=10.0.0"
     },
     "scripts": {
         "prepublishOnly": "eslint --config eslint.yaml microkernel-mod-hapi.js",
